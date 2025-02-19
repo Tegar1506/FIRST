@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Babeee</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: purple;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 60px;
+        }
+
+        p {
+            font-size: 18px;
+            width: 60%;
+            margin: auto;
+        }
+
+        textarea {
+            width: 60%;
+            height: 100px;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: blue;
+            color: aliceblue;
+            margin: 20px;
+            padding: 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        .love-img {
+            display: block;
+            margin: 20px auto;
+            height: 600px;
+            width: 600px;
+            border-radius: 50%; /* Membuat gambar berbentuk lingkaran */
+            border: 10px solid red; /* Membuat border merah */
+            padding: 10px;
+            position: relative;
+        }
+
+        /* Menambahkan pseudo-element untuk efek love */
+        .love-img::after {
+            content: "❤️";
+            font-size: 50px;
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Auralya Putri Jasmine Wirawan</h1>
+
+    <p>Halo babee, i make this site for u dengan maksud mengucapkan terimakasih for todayy.  
+        I really happy with u, makasi udah mau makan bareng, makasi udah sabar.  
+        Semangat terus yaa! I hope we can meraih mimpi kita bareng-bareng.  
+    </p>
+
+    <textarea id="feedback" placeholder="Kindly provide ur feedback lovee!"></textarea>
+    <br>
+
+    <button id="sendButton">Send to ur love</button>
+
+    <img src="love.jpg" alt="love" class="love-img">
+
+    <script>
+        document.getElementById("sendButton").addEventListener("click", function () {
+            let feedback = document.getElementById("feedback").value;
+            let phoneNumber = "6287845694292"; // Ganti dengan nomor pasanganmu dalam format internasional tanpa '+'
+            
+            if (feedback.trim() === "") {
+                alert("Tulis dulu feedbacknya ya, sayang! ❤️");
+                return;
+            }
+
+            let message = encodeURIComponent("Halo sayangku! 💜\n\nFeedback buat kamu:\n" + feedback);
+            let whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+            window.open(whatsappURL, "_blank");
+        });
+    </script>
+
+</body>
+
+</html>
